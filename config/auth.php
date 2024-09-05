@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+    ],
     ],
 
     /*
@@ -64,6 +69,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+],
+'aliases' => [
+'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
 
         // 'users' => [
         //     'driver' => 'database',
