@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CargoController;
 use App\Http\Controllers\DptoController;
+use App\Http\Controllers\AreaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(CargoController::class)->group(function () {
     Route::get('/cargos/datos','getData');
+    Route::get('/cargos/datosById','getDataById');
     Route::post('/cargos/save','save');
     Route::put('/cargos/update','update');
     Route::delete('/cargos/delete','delete');
@@ -44,6 +46,13 @@ Route::controller(DptoController::class)->group(function () {
     Route::post('/dptos/save','save');
     Route::put('/dptos/update','update');
     Route::delete('/dptos/delete','delete');
+});
+
+Route::controller(AreaController::class)->group(function () {
+    Route::get('/areas/datos','getData');
+    Route::post('/areas/save','save');
+    Route::put('/areas/update','update');
+    Route::delete('/areas/delete','delete');
 });
 
 // Route::controller(AuthController::class)->group(function () {
