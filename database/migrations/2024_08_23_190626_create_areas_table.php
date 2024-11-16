@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('prueba');
+            $table->integer('salario');
             $table->timestamps();
         });
     }
